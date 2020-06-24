@@ -1,14 +1,3 @@
-###Facewall
-
-Start with installing the dependencies:
-
-1. Run `npm install` to install all required packages.
-
-## Running
-
-1. Use `npm start` to start the dev server.
-2. Open `http://127.0.0.1:8080`
-
 # Facewall
 
 ## Table of contents
