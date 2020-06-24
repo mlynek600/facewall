@@ -1,0 +1,133 @@
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-align: center;
+}
+
+.header-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  top: -1px;
+}
+
+.gravatars {
+  margin-top: 110px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  float: left;
+  border-radius: 50%;
+  transition: all 150ms ease-in-out;
+}
+
+img:hover {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+}
+
+img.is-highlighted {
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 25vh auto;
+  padding: 1.5rem;
+  border: 2px solid yellow;
+  border-radius: 25px;
+  width: 40%;
+  position: relative;
+  font-family: monospace;
+  font-size: 2rem;
+  animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.7rem;
+}
+
+.close:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#root {
+  margin: 0 auto;
+  width: 70%;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.7) translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(0px);
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  .modal-content {
+    font-size: 1.6rem;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .modal-content {
+    font-size: 1rem;
+  }
+}
